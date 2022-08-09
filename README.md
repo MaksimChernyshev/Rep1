@@ -1,1 +1,1 @@
- https://MaksimChernyshev.github.io/Rep1/tree/CV/cv
+https://maksimchernyshev.github.io/Rep1/index
