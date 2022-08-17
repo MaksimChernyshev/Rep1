@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -25,7 +25,7 @@
             margin-top: 0;
             margin-bottom: 2em;
             font-size: 1.2em;
-            margin-inline-start: 20px;
+            margin-inline-start: 5px;
         }
         h3 {
             color: turquoise;
@@ -35,7 +35,7 @@
             margin-bottom: 1.2em;
         }
         .discription {
-            margin-top: 2em;
+            margin-top: 1em;
             margin-left: 1em;
         }
         .edu {
@@ -95,52 +95,51 @@
 </head>
 <body>
     <div class="I">
+        <div style="border-bottom: 2px solid grey;">
         <img src="2.jpg" alt="My photo" class="photo">
         <header class="position">
-            <h1>Maksim Chernyshev</h1>
-            <h2>Junior Front-End Developer</h2>
+            <h1>Чернышев Максим Сергеевич</h1>
+            <h2>Инженер по тестированию</h2>
         </header>
 
         <div class="position1">
         <ul class="contact">
-           <li>Phone number: <span>8(931)590-46-80</span></li>
+           <li>Номер телефона: <span>8(931)590-46-80</span></li>
         </ul>
         <ul class="contact">
            <li>Discord: badfrukt#8364</li>
         </ul>
         <ul class="contact">
-           <li>Github: <a href="https://github.com/MaksimChernyshev">My Github</a></li>
+           <li>Github: <a href="https://github.com/MaksimChernyshev">Мой Github</a></li>
         </ul>
         <ul class="contact">
            <li>Email: m.a.x.97@mail.ru</li>
         </ul>
         </div>
-
-        <h4></h4>
-
-        <h3>About me</h3>
-
-        <main class="discription">
-            Hi, my name is Maxim and I am 24 years old. A year ago, I graduated from the St. Petersburg Polytechnic University in the direction of compressor, vacuum and refrigeration equipment. 
-            After some time, I got a job as a sales manager for Ingersoll Rand compressor equipment, part-time service engineer. 
-            After about a year of work, I began to realize that this was not really my thing and thoughts began to appear, and whether to try something else. 
-            The idea to try myself as a front-end developer has already come to me, I signed up for this course in RSS and after the first lecture, 
-            having heard that it would be extremely difficult to take the course without having basic knowledge and that the amount of time that is required is not available to me, I abandoned it. 
-            And now, half a year later, I see the course announcement again. I realized that if I don't decide to radically change my occupation now, it will be much more difficult in the future. That's why I'm here.
-
-        </main>
-
-        <h4></h4>
+        </div>
         
-        <section>
-           <h3>Education</h3>
+        <section style="border-bottom: 2px solid grey;">
+            <h3>Обо мне</h3>
+        <div class="discription">
+            <p>
+         Заканчиваю обучение в Яндекс.Практикуме на позицию инженера по тестированию. На курсы с самого начала шел с планом дальнейшего трудоустройства, поэтому к обучению подходил крайне ответственно.
+        За это время приобрел ключевые навыки для работы: тест-анализ, тест-дизайн, работа с тестовой документацией, составление чек-листов, тест-кейсов и баг-репортов,
+        тестирование WEB и мобильных приложений, а так же работа с необходимыми для этого инструментами (Figma,DevTools, Charles, Android Studio, ADB),
+        тестирование API и работа в Postman, тестирование БД с помощью командной строки и SQL запросов. Обладаю базовыми познаниями в области Frontend разработки (html, css, JS).
+        Себя могу охарактеризовать как ответственного, исполнительного, целеустремлённого человека, всегда готового к обучению.
+            </p>
+        </div>
+        </section>
+        
+        <section style="border-bottom: 2px solid grey;">
+           <h3>Обучение</h3>
 
            <div class="edu">
-             <div class="edu__date">05.09.2021 - present</div>
+             <div class="edu__date">30.05.2022 - 04.09.2022</div>
              <div>
-                 <div class="edu__name">The Rolling Scopes School</div>
+                 <div class="edu__name">Яндекс.Практикум</div>
                  <ul class="edu__name" style="font-weight: normal;">
-                     <li>Front-End Development</li>
+                     <li>Инженер по тестированию</li>
                  </ul>
              </div>
            </div>
@@ -148,9 +147,9 @@
            <div class="edu">
              <div class="edu__date">01.09.2015 - 15.06.2019</div>
              <div>
-                <div class="edu__name">St. Petersburg Polytechnic University</div>
+                <div class="edu__name">Санкт-Петербургский Политехнический университет</div>
                 <ul class="edu__name" style="font-weight: normal;">
-                    <li style="max-width: 300px;"> Engineer of the Department of Compressor, Vacuum and Refrigeration Equipment</li>
+                    <li style="max-width: 300px;"> Инеженер конструктор по направлению компрессорная, вакуумная и холодильная техника</li>
                 </ul>
              </div>
            </div>
@@ -158,25 +157,23 @@
           <div class="edu">
              <div class="edu__date">01.09.2004 - 10.06.2015</div>
              <div>
-                <div class="edu__name">Gymnasium №5 of the city of Rudny, Kazakhstan</div>
+                <div class="edu__name">Гимназия №5 Рудный, Казахстан</div>
                 <ul class="edu__name" style="font-weight: normal;">
-                    <li>School curriculum</li>
+                    <li>Школьная программа</li>
                 </ul>
             </div>
           </div>
         </section>
 
-        <h4></h4>
-
-        <section>
-           <h3>Experience</h3>
+        <section style="border-bottom: 2px solid grey;">
+           <h3>Опыт работы</h3>
 
            <div class="edu">
              <div class="edu__date">18.11.2020 - 08.09.2021</div>
              <div>
-             <div class="edu__name" style="max-width: 60%;">Ingersoll Rand compressor equipment sales and service company</div>
+             <div class="edu__name" style="max-width: 60%;">Компания по продаже и сервисному обслуживанию коспрессоров Ingersoll Rand</div>
                  <ul class="edu__name" style="font-weight: normal;">
-                  <li>Sales Manager/Service Engineer</li>
+                  <li>Менеджер по работе с клиентами/Сервисный инженер</li>
                  </ul>
              </div>
            </div>
@@ -184,21 +181,19 @@
             <div class="edu">
                <div class="edu__date">01.06.2019 - 15.07.2020</div>
                <div>
-                 <div class="edu__name">A company that sells and manufactures kitchen sets</div>
+                 <div class="edu__name">Компания по изготовлению и продаже кухонного гарнитура</div>
                   <ul class="edu__name" style="font-weight: normal;">
-                     <li>Sales Manager</li>
+                     <li>Менеджер по работе с клиентами</li>
                   </ul>
                </div>
             </div>
         </section>
 
-        <h4></h4>
-
         <section>
-            <h3>Skills</h3>
+            <h3>Навыки</h3>
 
             <div class="edu">
-                HTML5 CSS JavaScript
+                • Тестирование • DevTools • API • Postman • SQL • Charles • Android studio • GIT • HTML5 • CSS • JavaScript
             </div>
         </section>
 
@@ -211,7 +206,7 @@
         </section>
 
         <section>
-            <h3>Example of code</h3>
+            <h3>Пример кода</h3>
             
             <pre class="example">
                 <code>                 
