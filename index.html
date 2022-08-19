@@ -57,8 +57,8 @@
             min-width: 630px;
         }
         .example {
-            max-width: 300px;
-            max-height: 70px;
+            max-width: 600px;
+            max-height: 700px;
             border: 2px solid black;
             font-size: 150%;
             margin-inline-start: 20px;
@@ -207,10 +207,34 @@
 
         <section>
             <h3>Пример кода</h3>
+            <div class="edu">Задачу задали в одном из тестовых заданий, необходимо посчитать суммарную стоимость квартир в доме 
+                исходя из того, что каждые X этажей (delta) стоимость квартиры увеличивается на 1000, на одном этаже только одна квартира, 
+                параметром floorCount задается количество этажей в доме,
+                параметром flatPrice задается первоначальная стоимость . 
+            </div>
             
             <pre class="example">
                 <code>                 
- console.log(Hello World!)
+ function housePrice(floorCount, delta, flatPrice) {
+   let sum = 0;
+   let floor = 1;
+   let floordelta = 0;
+   let sumFlatPrice = flatPrice;
+
+   while (floor <= floorCount) {
+     if (floordelta !== delta) {
+       sum = sum + sumFlatPrice
+       floor++
+       floordelta++
+     } else {
+     sumFlatPrice = sumFlatPrice + 1000
+     floordelta = 0
+     }
+   }
+   return sum;
+ };
+ console.log (housePrice(10,2,5000))
+                     
                 </code>
             </pre>
         </section>
