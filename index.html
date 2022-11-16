@@ -135,7 +135,7 @@
            <h3>Обучение</h3>
 
            <div class="edu">
-             <div class="edu__date">30.05.2022 - 04.09.2022</div>
+             <div class="edu__date">30.05.2022 - 24.10.2022</div>
              <div>
                  <div class="edu__name">Яндекс.Практикум</div>
                  <ul class="edu__name" style="font-weight: normal;">
