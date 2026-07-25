@@ -2,242 +2,230 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CV</title>
+    <title>CV — Максим Чернышев</title>
     <style>
-        html {
-            font-family: Arial, sans-serif;
-            background-color: #e6e2d4;
-            max-width: 80%;
-            margin: 10%;
-            margin-top: 0;
-        }
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
+
         * {
-            color: gray;
+            box-sizing: border-box;
         }
-        h1 {
-            color: turquoise;
-            margin-bottom: 0.3em;
+
+        body {
+            margin: 0;
+            background: #ddd8cc;
+            font-family: Montserrat, Arial, sans-serif;
+            color: #333;
         }
-        h2 {
-            color: gray;
-            margin-top: 0;
-            margin-bottom: 2em;
-            font-size: 1.2em;
-            margin-inline-start: 5px;
+
+        .cv {
+            width: 900px;
+            min-height: 1200px;
+            margin: 40px auto;
+            display: grid;
+            grid-template-columns: 34% 66%;
+            background: #555351;
+            color: white;
+            box-shadow: 0 10px 30px #777;
         }
-        h3 {
-            color: turquoise;
-            margin-inline-start: 20px;
+
+        .left {
+            background: #f1f1ef;
+            color: #333;
+            padding: 35px 30px;
         }
-        .contact {
-            margin-bottom: 1.2em;
+
+        .right {
+            padding: 45px 45px;
         }
-        .discription {
-            margin-top: 1em;
-            margin-left: 1em;
-        }
-        .edu {
-            display: flex;
-            margin-top: 1em;
-            margin-inline-start: 20px;
-        }
-        .edu__date {
-            min-width: 190px;
-            margin-bottom: 1em;
-            
-        }
-        .edu__name {
-            font-weight: bold;
-            margin-left: 5em;
-        }
-        .I {
-            border: 3px solid gray;
-            min-width: 630px;
-        }
-        .example {
-            max-width: 600px;
-            max-height: 700px;
-            border: 2px solid black;
-            font-size: 150%;
-            margin-inline-start: 20px;
-        }
-        .position {
-            position: absolute;
-            margin-left: 19em;
-            margin-top: -24em;
-        }
-        .position1 {
-            position: absolute;
-            margin-left: 17em;
-            margin-top: -15em;   
-        }
-        h4::before, h4::after {
-            content: '';
-            background: gray;
-            display: inline-block;
-            height: 2px;
-            position: relative;
-            vertical-align: middle;
-            width: 50%;
-        }
+
         .photo {
-            max-width: 15em;
-            display: block;
-            position: static;
-            margin-block-start: 1em;
-            margin-block-end: 1em;
-            margin-inline-start: 15px;
-            margin-inline-end: 15px;
+            width: 100%;
+            height: 330px;
+            object-fit: cover;
+            filter: grayscale(100%);
+            margin-bottom: 35px;
+        }
+
+        .name {
+            font-size: 42px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            margin: 0;
+        }
+
+        .role {
+            font-size: 16px;
+            margin-top: 8px;
+            letter-spacing: 1px;
+            color: #ddd;
+        }
+
+        .section-title {
+            font-size: 22px;
+            letter-spacing: 4px;
+            font-weight: 700;
+            margin: 35px 0 20px;
+            text-transform: uppercase;
+        }
+
+        .left .section-title {
+            color: #444;
+        }
+
+        .text {
+            font-size: 13px;
+            line-height: 1.7;
+        }
+
+        .skill {
+            display: inline-block;
+            background: #333;
+            color: white;
+            padding: 8px 15px;
+            border-radius: 20px;
+            margin: 5px 3px;
+            font-size: 12px;
+        }
+
+            .skill.light {
+                background: white;
+                color: #333;
+            }
+
+        .contact p {
+            font-size: 13px;
+            margin: 12px 0;
+        }
+
+        .item {
+            position: relative;
+            padding-left: 25px;
+            margin-bottom: 25px;
+        }
+
+            .item:before {
+                content: "";
+                position: absolute;
+                left: 0;
+                top: 5px;
+                width: 10px;
+                height: 10px;
+                border-radius: 50%;
+                background: white;
+            }
+
+            .item:after {
+                content: "";
+                position: absolute;
+                left: 4px;
+                top: 15px;
+                width: 2px;
+                height: calc(100% + 10px);
+                background: #ddd;
+            }
+
+            .item:last-child:after {
+                display: none;
+            }
+
+        .title {
+            font-weight: 700;
+            font-size: 14px;
+        }
+
+        .subtitle {
+            font-size: 12px;
+            color: #ddd;
+            margin: 5px 0;
+        }
+
+        .desc {
+            font-size: 12px;
+            line-height: 1.6;
+        }
+
+        @media(max-width:900px) {
+            .cv {
+                width: 100%;
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
+
 <body>
-    <div class="I">
-        <div style="border-bottom: 2px solid grey;">
-        <img src="2.jpg" alt="My photo" class="photo">
-        <header class="position">
-            <h1>Чернышев Максим Сергеевич</h1>
-            <h2>Инженер по тестированию</h2>
-        </header>
+    <div class="cv">
 
-        <div class="position1">
-        <ul class="contact">
-           <li>Номер телефона: <span>8(931)590-46-80</span></li>
-        </ul>
-        <ul class="contact">
-           <li>Discord: badfrukt#8364</li>
-        </ul>
-        <ul class="contact">
-           <li>Github: <a href="https://github.com/MaksimChernyshev">Мой Github</a></li>
-        </ul>
-        <ul class="contact">
-           <li>Email: m.a.x.97@mail.ru</li>
-        </ul>
+        <div class="left">
+            <img src="2.jpg" class="photo" alt="Фото">
+
+            <div class="text">
+                Инженер по тестированию с опытом работы с WEB и мобильными приложениями.
+                Владею тест-анализом, тест-дизайном, API-тестированием, SQL и инструментами разработчика.
+                Ответственный, быстро обучаюсь и стремлюсь развиваться в QA.
+            </div>
+
+            <h2 class="section-title">Навыки</h2>
+            <span class="skill">Тестирование</span>
+            <span class="skill light">DevTools</span>
+            <span class="skill">API</span>
+            <span class="skill">Postman</span>
+            <span class="skill light">SQL</span>
+            <span class="skill">Charles</span>
+            <span class="skill">Git</span>
+            <span class="skill light">HTML/CSS</span>
+            <span class="skill">JavaScript</span>
+
+            <h2 class="section-title">Контакты</h2>
+            <div class="contact">
+                <p>☎ 8 (931) 590-46-80</p>
+                <p>✉ m.a.x.97@mail.ru</p>
+                <p>GitHub: github.com/MaksimChernyshev</p>
+                <p>Discord: badfrukt#8364</p>
+            </div>
         </div>
+
+
+        <div class="right">
+            <h1 class="name">ЧЕРНЫШЕВ<br>МАКСИМ</h1>
+            <div class="role">ИНЖЕНЕР ПО ТЕСТИРОВАНИЮ</div>
+
+            <h2 class="section-title">Обучение</h2>
+
+            <div class="item">
+                <div class="title">Яндекс.Практикум</div>
+                <div class="subtitle">Инженер по тестированию | 2022</div>
+                <div class="desc">
+                    Тестирование WEB и мобильных приложений, тестовая документация,
+                    API, Postman, SQL, DevTools.
+                </div>
+            </div>
+
+            <div class="item">
+                <div class="title">Санкт-Петербургский Политехнический университет</div>
+                <div class="subtitle">2015 — 2019</div>
+                <div class="desc">Инженер-конструктор по направлению компрессорная, вакуумная и холодильная техника.</div>
+            </div>
+
+            <h2 class="section-title">Опыт работы</h2>
+
+            <div class="item">
+                <div class="title">Менеджер по работе с клиентами / Сервисный инженер</div>
+                <div class="subtitle">Ingersoll Rand | 2020 — 2021</div>
+                <div class="desc">Работа с клиентами, техническая поддержка, сопровождение сервисных процессов.</div>
+            </div>
+
+            <div class="item">
+                <div class="title">Менеджер по работе с клиентами</div>
+                <div class="subtitle">2019 — 2020</div>
+                <div class="desc">Консультирование клиентов, ведение проектов и документации.</div>
+            </div>
+
+            <h2 class="section-title">English</h2>
+            <div class="desc">A2 Pre-Intermediate</div>
+
         </div>
-        
-        <section style="border-bottom: 2px solid grey;">
-            <h3>Обо мне</h3>
-        <div class="discription">
-            <p>
-         На курсы инженера по тестированию с самого начала шел с планом дальнейшего трудоустройства, поэтому к обучению подходил крайне ответственно.
-        За это время приобрел ключевые навыки для работы: тест-анализ, тест-дизайн, работа с тестовой документацией, составление чек-листов, тест-кейсов и баг-репортов,
-        тестирование WEB и мобильных приложений, а так же работа с необходимыми для этого инструментами (Figma,DevTools, Charles, Android Studio, ADB),
-        тестирование API и работа в Postman, тестирование БД с помощью командной строки и SQL запросов. Обладаю базовыми познаниями в области Frontend разработки (html, css, JS).
-        Себя могу охарактеризовать как ответственного, исполнительного, целеустремлённого человека, всегда готового к обучению.
-            </p>
-        </div>
-        </section>
-        
-        <section style="border-bottom: 2px solid grey;">
-           <h3>Обучение</h3>
-
-           <div class="edu">
-             <div class="edu__date">30.05.2022 - 24.10.2022</div>
-             <div>
-                 <div class="edu__name">Яндекс.Практикум</div>
-                 <ul class="edu__name" style="font-weight: normal;">
-                     <li>Инженер по тестированию</li>
-                 </ul>
-             </div>
-           </div>
-
-           <div class="edu">
-             <div class="edu__date">01.09.2015 - 15.06.2019</div>
-             <div>
-                <div class="edu__name">Санкт-Петербургский Политехнический университет</div>
-                <ul class="edu__name" style="font-weight: normal;">
-                    <li style="max-width: 300px;"> Инеженер конструктор по направлению компрессорная, вакуумная и холодильная техника</li>
-                </ul>
-             </div>
-           </div>
-
-          <div class="edu">
-             <div class="edu__date">01.09.2004 - 10.06.2015</div>
-             <div>
-                <div class="edu__name">Гимназия №5 Рудный, Казахстан</div>
-                <ul class="edu__name" style="font-weight: normal;">
-                    <li>Школьная программа</li>
-                </ul>
-            </div>
-          </div>
-        </section>
-
-        <section style="border-bottom: 2px solid grey;">
-           <h3>Опыт работы</h3>
-
-           <div class="edu">
-             <div class="edu__date">18.11.2020 - 08.09.2021</div>
-             <div>
-             <div class="edu__name" style="max-width: 60%;">Компания по продаже и сервисному обслуживанию компрессоров Ingersoll Rand</div>
-                 <ul class="edu__name" style="font-weight: normal;">
-                  <li>Менеджер по работе с клиентами/Сервисный инженер</li>
-                 </ul>
-             </div>
-           </div>
-
-            <div class="edu">
-               <div class="edu__date">01.06.2019 - 15.07.2020</div>
-               <div>
-                 <div class="edu__name">Компания по изготовлению и продаже кухонного гарнитура</div>
-                  <ul class="edu__name" style="font-weight: normal;">
-                     <li>Менеджер по работе с клиентами</li>
-                  </ul>
-               </div>
-            </div>
-        </section>
-
-        <section>
-            <h3>Навыки</h3>
-
-            <div class="edu">
-                • Тестирование • DevTools • API • Postman • SQL • Charles • Android studio • GIT • HTML5 • CSS • JavaScript
-            </div>
-        </section>
-
-        <section>
-            <h3>English</h3>
-
-            <div class="edu">
-                A2 Pre-Intermediate
-            </div>
-        </section>
-
-        <section>
-            <h3>Пример кода</h3>
-            <div class="edu">Задачу задали в одном из тестовых заданий, необходимо посчитать суммарную стоимость квартир в доме 
-                исходя из того, что каждые X этажей (delta) стоимость квартиры увеличивается на 1000, на одном этаже только одна квартира, 
-                параметром floorCount задается количество этажей в доме,
-                параметром flatPrice задается первоначальная стоимость . 
-            </div>
-            
-            <pre class="example">
-                <code>                 
- function housePrice(floorCount, delta, flatPrice) {
-   let sum = 0;
-   let floor = 1;
-   let floordelta = 0;
-   let sumFlatPrice = flatPrice;
-
-   while (floor <= floorCount) {
-     if (floordelta !== delta) {
-       sum = sum + sumFlatPrice
-       floor++
-       floordelta++
-     } else {
-     sumFlatPrice = sumFlatPrice + 1000
-     floordelta = 0
-     }
-   }
-   return sum;
- };
- console.log (housePrice(10,2,5000))
-                     
-                </code>
-            </pre>
-        </section>
     </div>
 </body>
 </html>
