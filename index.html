@@ -3,229 +3,364 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CV — Максим Чернышев</title>
+    <title>Резюме — Максим Чернышев</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap');
+
+        :root {
+            --bg: #dcd7cb;
+            --dark: #585553;
+            --light: #efefec;
+            --txt: #2f2f2f;
+            --white: #f7f7f5;
+            --muted: #d7d4cf;
+            --line: rgba(255,255,255,.28);
+            --shadow: 0 14px 36px rgba(0,0,0,.22);
+        }
 
         * {
-            box-sizing: border-box;
+            box-sizing: border-box
+        }
+
+        html, body {
+            margin: 0;
+            padding: 0
         }
 
         body {
-            margin: 0;
-            background: #ddd8cc;
-            font-family: Montserrat, Arial, sans-serif;
-            color: #333;
+            background: var(--bg);
+            font-family: Montserrat,Arial,sans-serif;
+            color: var(--white);
+            line-height: 1.45
         }
 
-        .cv {
-            width: 900px;
-            min-height: 1200px;
-            margin: 40px auto;
+        .page {
+            width: min(980px,calc(100vw - 32px));
+            margin: 28px auto;
+            box-shadow: var(--shadow);
             display: grid;
             grid-template-columns: 34% 66%;
-            background: #555351;
-            color: white;
-            box-shadow: 0 10px 30px #777;
+            min-height: 1280px;
+            background: var(--dark);
+            overflow: hidden
         }
 
         .left {
-            background: #f1f1ef;
-            color: #333;
-            padding: 35px 30px;
+            background: var(--light);
+            color: var(--txt);
+            padding: 30px 28px 34px
         }
 
         .right {
-            padding: 45px 45px;
+            padding: 42px 44px 38px
         }
 
         .photo {
             width: 100%;
-            height: 330px;
+            aspect-ratio: 1/1.15;
             object-fit: cover;
-            filter: grayscale(100%);
-            margin-bottom: 35px;
+            object-position: center top;
+            display: block;
+            margin-bottom: 28px;
+            border-radius: 2px
         }
 
-        .name {
-            font-size: 42px;
-            font-weight: 700;
-            letter-spacing: 2px;
-            margin: 0;
-        }
-
-        .role {
-            font-size: 16px;
-            margin-top: 8px;
-            letter-spacing: 1px;
-            color: #ddd;
+        .about {
+            margin-top: 6px;
+            font-size: 13px;
+            line-height: 1.75;
+            color: #404040
         }
 
         .section-title {
-            font-size: 22px;
+            margin: 30px 0 16px;
+            font-size: 21px;
+            line-height: 1;
             letter-spacing: 4px;
-            font-weight: 700;
-            margin: 35px 0 20px;
             text-transform: uppercase;
+            font-weight: 800
         }
 
         .left .section-title {
             color: #444;
+            font-size: 18px;
+            letter-spacing: 3px
         }
 
-        .text {
-            font-size: 13px;
-            line-height: 1.7;
+        .contacts {
+            margin: 0;
+            padding: 0;
+            list-style: none
         }
 
-        .skill {
-            display: inline-block;
-            background: #333;
-            color: white;
-            padding: 8px 15px;
-            border-radius: 20px;
-            margin: 5px 3px;
-            font-size: 12px;
-        }
-
-            .skill.light {
-                background: white;
-                color: #333;
+            .contacts li {
+                margin: 0 0 11px;
+                font-size: 13px;
+                color: #444;
+                word-break: break-word
             }
 
-        .contact p {
-            font-size: 13px;
-            margin: 12px 0;
+        .name {
+            margin: 0;
+            font-size: clamp(38px,5vw,58px);
+            line-height: .92;
+            letter-spacing: 2.4px;
+            font-weight: 800;
+            text-transform: uppercase
         }
 
-        .item {
-            position: relative;
-            padding-left: 25px;
-            margin-bottom: 25px;
+        .role {
+            margin-top: 12px;
+            font-size: 15px;
+            letter-spacing: 1.6px;
+            color: #ebe8e2;
+            text-transform: uppercase;
+            font-weight: 500
         }
 
-            .item:before {
+        .separator {
+            height: 2px;
+            width: 180px;
+            background: rgba(255,255,255,.55);
+            margin: 18px 0 0;
+            position: relative
+        }
+
+            .separator:after {
                 content: "";
                 position: absolute;
-                left: 0;
+                right: -4px;
+                top: 50%;
+                transform: translateY(-50%);
+                width: 8px;
+                height: 8px;
+                background: #fff;
+                border-radius: 50%
+            }
+
+        .timeline {
+            margin-top: 24px;
+            position: relative;
+            padding-left: 22px
+        }
+
+            .timeline:before {
+                content: "";
+                position: absolute;
+                left: 4px;
+                top: 8px;
+                bottom: 8px;
+                width: 2px;
+                background: var(--line)
+            }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 22px;
+            padding-bottom: 2px
+        }
+
+            .timeline-item:before {
+                content: "";
+                position: absolute;
+                left: -22px;
                 top: 5px;
                 width: 10px;
                 height: 10px;
                 border-radius: 50%;
-                background: white;
+                background: #fff;
+                box-shadow: 0 0 0 4px rgba(255,255,255,.12)
             }
 
-            .item:after {
+            .timeline-item:last-child {
+                margin-bottom: 0
+            }
+
+        .item-title {
+            font-size: 15px;
+            font-weight: 700;
+            margin: 0
+        }
+
+        .item-subtitle {
+            margin: 4px 0 8px;
+            font-size: 12px;
+            color: #ddd9d1;
+            font-weight: 500
+        }
+
+        .item-list {
+            margin: 0;
+            padding-left: 16px;
+            font-size: 12.5px
+        }
+
+            .item-list li {
+                margin: 0 0 8px
+            }
+
+        .edu {
+            margin-top: 24px
+        }
+
+        .edu-grid {
+            display: grid;
+            gap: 18px;
+            margin-top: 16px
+        }
+
+        .edu-item {
+            position: relative;
+            padding-left: 22px
+        }
+
+            .edu-item:before {
                 content: "";
                 position: absolute;
-                left: 4px;
-                top: 15px;
+                left: -1px;
+                top: 5px;
+                width: 9px;
+                height: 9px;
+                background: #fff;
+                border-radius: 50%
+            }
+
+            .edu-item:after {
+                content: "";
+                position: absolute;
+                left: 3px;
+                top: 14px;
+                bottom: -8px;
                 width: 2px;
-                height: calc(100% + 10px);
-                background: #ddd;
+                background: rgba(255,255,255,.22)
             }
 
-            .item:last-child:after {
-                display: none;
+            .edu-item:last-child:after {
+                display: none
             }
 
-        .title {
-            font-weight: 700;
-            font-size: 14px;
+        .edu-title {
+            margin: 0;
+            font-size: 15px;
+            font-weight: 700
         }
 
-        .subtitle {
+        .edu-subtitle {
+            margin: 4px 0 8px;
             font-size: 12px;
-            color: #ddd;
-            margin: 5px 0;
+            color: #ddd9d1
         }
 
-        .desc {
-            font-size: 12px;
-            line-height: 1.6;
+        .edu-desc {
+            margin: 0;
+            font-size: 12.5px
         }
 
-        @media(max-width:900px) {
-            .cv {
-                width: 100%;
+        .language {
+            margin-top: 18px;
+            font-size: 13px
+        }
+
+        .muted {
+            color: #ddd9d1
+        }
+
+        @media (max-width:900px) {
+            .page {
+                width: calc(100vw - 18px);
                 grid-template-columns: 1fr;
+                margin: 10px auto;
+                min-height: auto
+            }
+
+            .right, .left {
+                padding: 24px 20px
+            }
+
+            .name {
+                font-size: 34px
+            }
+        }
+
+        @media print {
+            body {
+                background: #fff
+            }
+
+            .page {
+                width: 100%;
+                margin: 0;
+                box-shadow: none;
+                min-height: auto
             }
         }
     </style>
 </head>
-
 <body>
-    <div class="cv">
-
-        <div class="left">
-            <img src="2.jpg" class="photo" alt="Фото">
-
-            <div class="text">
-                Инженер по тестированию с опытом работы с WEB и мобильными приложениями.
-                Владею тест-анализом, тест-дизайном, API-тестированием, SQL и инструментами разработчика.
-                Ответственный, быстро обучаюсь и стремлюсь развиваться в QA.
-            </div>
-
-            <h2 class="section-title">Навыки</h2>
-            <span class="skill">Тестирование</span>
-            <span class="skill light">DevTools</span>
-            <span class="skill">API</span>
-            <span class="skill">Postman</span>
-            <span class="skill light">SQL</span>
-            <span class="skill">Charles</span>
-            <span class="skill">Git</span>
-            <span class="skill light">HTML/CSS</span>
-            <span class="skill">JavaScript</span>
-
+    <main class="page">
+        <aside class="left">
+            <img src="2.jpg" alt="Фото" class="photo">
+            <h2 class="section-title">Обо мне</h2>
+            <div class="about">Добрый день! На связи коммуникабельный и целеустремленный менеджер внутреннего продукта, по совместительству проектный менеджер с 3-летним опытом успешного развития продукта и управления командой в IT-сфере. Умею соединять потребности бизнеса и пользователей, качественно анализировать их при проектировании задач, правильно расставлять приоритеты и эффективно распоряжаться ресурсами команды.</div>
             <h2 class="section-title">Контакты</h2>
-            <div class="contact">
-                <p>☎ 8 (931) 590-46-80</p>
-                <p>✉ m.a.x.97@mail.ru</p>
-                <p>GitHub: github.com/MaksimChernyshev</p>
-                <p>Discord: badfrukt#8364</p>
-            </div>
-        </div>
-
-
-        <div class="right">
+            <ul class="contacts">
+                <li>Телефон: <span class="muted">8 (931) 590-46-80</span></li>
+                <li>Email: <span class="muted">m.a.x.97@mail.ru</span></li>
+                <li>GitHub: <span class="muted">github.com/MaksimChernyshev</span></li>
+                <li>Discord: <span class="muted">badfrukt#8364</span></li>
+            </ul>
+        </aside>
+        <section class="right">
             <h1 class="name">ЧЕРНЫШЕВ<br>МАКСИМ</h1>
-            <div class="role">ИНЖЕНЕР ПО ТЕСТИРОВАНИЮ</div>
+            <div class="role">Менеджер внутреннего продукта / Project &amp; Product Manager</div>
+            <div class="separator"></div>
 
-            <h2 class="section-title">Обучение</h2>
-
-            <div class="item">
-                <div class="title">Яндекс.Практикум</div>
-                <div class="subtitle">Инженер по тестированию | 2022</div>
-                <div class="desc">
-                    Тестирование WEB и мобильных приложений, тестовая документация,
-                    API, Postman, SQL, DevTools.
+            <h2 class="section-title">Опыт работы</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <p class="item-title">IDENT</p>
+                    <p class="item-subtitle">Project/Product менеджер внутреннего продукта | январь 2024 — настоящее время</p>
+                    <ul class="item-list">
+                        <li>Лидирую кросс-функциональную команду из 5 человек: 3 C#-разработчика, QA-инженер и бизнес-аналитик.</li>
+                        <li>Управляю полным циклом задач и пожеланий от разных стейкхолдеров — от линейных сотрудников до директоров: сбор и формализация требований, проектирование решений, декомпозиция, агрегация задач в релизы и сопровождение до внедрения.</li>
+                        <li>Оптимизирую и внедряю новые бизнес-процессы внутреннего продукта, повышаю эффективность работы пользователей и сокращаю операционные издержки. Это позволило заметно улучшить бизнес-метрики:</li>
+                        <li>Рост процента обработанных клиник на стадии открытия с 69% до 94%, что, как следствие, привело к росту конверсии лидов в клиентов с 19% до 23%.</li>
+                        <li>Вдвое увеличена скорость обновления клиник.</li>
+                        <li>Значительно увеличена скорость исправления критических инцидентов: неудачных обновлений клиник, из-за которых программа перестаёт работать, обработки негативных обращений клиентов, внутренних критических ошибок и других подобных случаев.</li>
+                        <li>Веду и развиваю product roadmap: планирование инициатив, балансировка загрузки команды, увязка задач с приоритетами бизнеса.</li>
+                        <li>Участвую в продуктовой проработке решений: макетирование и прототипирование интерфейсов (Figma и др.), формирование пользовательских сценариев.</li>
+                        <li>Координирую взаимодействие между бизнесом и командой разработки, управляю ожиданиями стейкхолдеров и сроками реализации.</li>
+                        <li>Настраиваю и веду проектные инструменты: доски задач, трекинг, планирование спринтов и итераций, повышаю прозрачность процессов и контроль исполнения.</li>
+                    </ul>
+                </div>
+                <div class="timeline-item">
+                    <p class="item-title">IDENT</p>
+                    <p class="item-subtitle">Инженер по обеспечению качества (QA) | январь 2023 — январь 2024</p>
+                    <ul class="item-list">
+                        <li>Разрабатывал тестовую документацию: тест-планы, чек-листы и тест-кейсы. Структурировал процесс тестирования с целью оптимального покрытия продукта в условиях ограниченных ресурсов.</li>
+                        <li>Проводил ручное тестирование продукта во всех плоскостях: UI/UX, анализ работы кода и базы данных. Взаимодействовал с разработчиками для оперативного исправления найденных дефектов.</li>
+                        <li>Обеспечивал качество продукта: анализировал тестовую документацию и результаты тестирования для оптимизации процессов проверки.</li>
+                    </ul>
                 </div>
             </div>
 
-            <div class="item">
-                <div class="title">Санкт-Петербургский Политехнический университет</div>
-                <div class="subtitle">2015 — 2019</div>
-                <div class="desc">Инженер-конструктор по направлению компрессорная, вакуумная и холодильная техника.</div>
+            <h2 class="section-title edu">Образование</h2>
+            <div class="edu-grid">
+                <div class="edu-item">
+                    <p class="edu-title">Яндекс.Практикум</p>
+                    <p class="edu-subtitle">Инженер по тестированию | 2022</p>
+                    <p class="edu-desc">Тестирование веб- и мобильных приложений, тестовая документация, API, Postman, SQL, DevTools.</p>
+                </div>
+                <div class="edu-item">
+                    <p class="edu-title">Санкт-Петербургский Политехнический университет</p>
+                    <p class="edu-subtitle">2015 — 2019</p>
+                    <p class="edu-desc">Инженер-конструктор по направлению «Компрессорная, вакуумная и холодильная техника».</p>
+                </div>
             </div>
 
-            <h2 class="section-title">Опыт работы</h2>
-
-            <div class="item">
-                <div class="title">Менеджер по работе с клиентами / Сервисный инженер</div>
-                <div class="subtitle">Ingersoll Rand | 2020 — 2021</div>
-                <div class="desc">Работа с клиентами, техническая поддержка, сопровождение сервисных процессов.</div>
-            </div>
-
-            <div class="item">
-                <div class="title">Менеджер по работе с клиентами</div>
-                <div class="subtitle">2019 — 2020</div>
-                <div class="desc">Консультирование клиентов, ведение проектов и документации.</div>
-            </div>
-
-            <h2 class="section-title">English</h2>
-            <div class="desc">A2 Pre-Intermediate</div>
-
-        </div>
-    </div>
+            <h2 class="section-title edu">English</h2>
+            <div class="language">A2 — Pre-Intermediate</div>
+        </section>
+    </main>
 </body>
 </html>
