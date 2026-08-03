@@ -1,364 +1,468 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Резюме — Максим Чернышев</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap');
 
         :root {
-            --bg: #dcd7cb;
-            --dark: #585553;
-            --light: #efefec;
-            --txt: #2f2f2f;
-            --white: #f7f7f5;
-            --muted: #d7d4cf;
-            --line: rgba(255,255,255,.28);
-            --shadow: 0 14px 36px rgba(0,0,0,.22);
+            --page-bg: #e8e2d6;
+            --paper: #f7f5f1;
+            --white: #ffffff;
+            --text: #181818;
+            --muted: #5a5a5a;
+            --line: #d5d0c6;
+            --chip: #efe8dc;
+            --chip-strong: #e4dccf;
+            --shadow: 0 16px 40px rgba(0,0,0,.12);
         }
 
         * {
-            box-sizing: border-box
+            box-sizing: border-box;
         }
 
         html, body {
             margin: 0;
-            padding: 0
+            padding: 0;
         }
 
         body {
-            background: var(--bg);
-            font-family: Montserrat,Arial,sans-serif;
-            color: var(--white);
-            line-height: 1.45
+            background: var(--page-bg);
+            color: var(--text);
+            font-family: "Montserrat", Arial, sans-serif;
+            line-height: 1.45;
         }
 
-        .page {
-            width: min(980px,calc(100vw - 32px));
-            margin: 28px auto;
+        .resume {
+            width: min(1160px, calc(100vw - 32px));
+            margin: 28px auto 36px;
+            background: var(--white);
             box-shadow: var(--shadow);
+            overflow: hidden;
+        }
+
+        /* HEADER */
+        .header {
             display: grid;
-            grid-template-columns: 34% 66%;
-            min-height: 1280px;
-            background: var(--dark);
-            overflow: hidden
+            grid-template-columns: 1.05fr 0.72fr 1.23fr;
+            gap: 34px;
+            align-items: start;
+            padding: 34px 36px 30px;
+            background: linear-gradient(180deg, #f4efe5 0%, #f7f5f1 100%);
         }
 
-        .left {
-            background: var(--light);
-            color: var(--txt);
-            padding: 30px 28px 34px
+        .name {
+            margin: 0;
+            font-size: clamp(38px, 5vw, 63px);
+            line-height: .94;
+            font-weight: 800;
+            letter-spacing: -1px;
+            text-transform: uppercase;
         }
 
-        .right {
-            padding: 42px 44px 38px
+        .role {
+            margin: 16px 0 0;
+            font-size: 17px;
+            line-height: 1.2;
+            font-weight: 700;
+            letter-spacing: .2px;
+            text-transform: uppercase;
+        }
+
+        .contacts {
+            margin-top: 30px;
+            display: grid;
+            gap: 8px;
+            font-size: 14px;
+            color: var(--muted);
+        }
+
+        .contact {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            min-height: 24px;
+            word-break: break-word;
+        }
+
+        .icon {
+            width: 20px;
+            flex: 0 0 20px;
+            text-align: center;
+            font-size: 16px;
+            color: #111;
+        }
+
+        .photo-wrap {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            padding-top: 4px;
         }
 
         .photo {
             width: 100%;
-            aspect-ratio: 1/1.15;
+            max-width: 225px;
+            aspect-ratio: 0.78 / 1;
             object-fit: cover;
             object-position: center top;
             display: block;
-            margin-bottom: 28px;
-            border-radius: 2px
+            background: #ddd;
+            border-radius: 4px;
+            box-shadow: 0 8px 18px rgba(0,0,0,.08);
+        }
+
+        .about-title {
+            margin: 0 0 12px;
+            font-size: 20px;
+            line-height: 1;
+            font-weight: 800;
+            letter-spacing: .8px;
+            text-transform: uppercase;
         }
 
         .about {
-            margin-top: 6px;
-            font-size: 13px;
-            line-height: 1.75;
-            color: #404040
+            margin: 0;
+            font-size: 15px;
+            line-height: 1.65;
+            color: #202020;
+            max-width: 100%;
         }
 
-        .section-title {
-            margin: 30px 0 16px;
-            font-size: 21px;
-            line-height: 1;
-            letter-spacing: 4px;
-            text-transform: uppercase;
-            font-weight: 800
+            .about p {
+                margin: 0 0 16px;
+            }
+
+        /* BODY SECTIONS */
+        .section {
+            padding: 0 36px 28px;
         }
 
-        .left .section-title {
-            color: #444;
+            .section + .section {
+                padding-top: 8px;
+            }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 18px;
+            margin: 0 0 22px;
+        }
+
+            .section-header h2 {
+                margin: 0;
+                font-size: 24px;
+                line-height: 1;
+                font-weight: 800;
+                letter-spacing: .5px;
+                text-transform: uppercase;
+                white-space: nowrap;
+            }
+
+            .section-header .rule {
+                height: 1px;
+                background: var(--line);
+                flex: 1;
+                margin-top: 2px;
+            }
+
+        .experience {
+            display: grid;
+            gap: 28px;
+        }
+
+        .job {
+            padding-bottom: 22px;
+            border-bottom: 1px solid #e7e2d8;
+        }
+
+            .job:last-child {
+                border-bottom: 0;
+                padding-bottom: 0;
+            }
+
+        .job-title {
+            margin: 0 0 10px;
             font-size: 18px;
-            letter-spacing: 3px
-        }
-
-        .contacts {
-            margin: 0;
-            padding: 0;
-            list-style: none
-        }
-
-            .contacts li {
-                margin: 0 0 11px;
-                font-size: 13px;
-                color: #444;
-                word-break: break-word
-            }
-
-        .name {
-            margin: 0;
-            font-size: clamp(38px,5vw,58px);
-            line-height: .92;
-            letter-spacing: 2.4px;
+            line-height: 1.25;
             font-weight: 800;
-            text-transform: uppercase
+            letter-spacing: .1px;
         }
 
-        .role {
-            margin-top: 12px;
-            font-size: 15px;
-            letter-spacing: 1.6px;
-            color: #ebe8e2;
-            text-transform: uppercase;
-            font-weight: 500
+        .meta-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px 12px;
+            align-items: center;
+            margin-bottom: 14px;
         }
 
-        .separator {
-            height: 2px;
-            width: 180px;
-            background: rgba(255,255,255,.55);
-            margin: 18px 0 0;
-            position: relative
+        .chip {
+            display: inline-flex;
+            align-items: center;
+            gap: 7px;
+            min-height: 34px;
+            padding: 7px 12px;
+            border-radius: 8px;
+            background: var(--chip);
+            color: #222;
+            font-size: 13px;
+            font-weight: 600;
+            line-height: 1.15;
+            border: 1px solid rgba(0,0,0,.04);
         }
 
-            .separator:after {
-                content: "";
-                position: absolute;
-                right: -4px;
-                top: 50%;
-                transform: translateY(-50%);
-                width: 8px;
-                height: 8px;
-                background: #fff;
-                border-radius: 50%
+            .chip.company {
+                background: var(--chip-strong);
+                font-weight: 700;
             }
 
-        .timeline {
-            margin-top: 24px;
-            position: relative;
-            padding-left: 22px
-        }
-
-            .timeline:before {
-                content: "";
-                position: absolute;
-                left: 4px;
-                top: 8px;
-                bottom: 8px;
-                width: 2px;
-                background: var(--line)
+            .chip.date {
+                white-space: nowrap;
             }
 
-        .timeline-item {
-            position: relative;
-            margin-bottom: 22px;
-            padding-bottom: 2px
-        }
-
-            .timeline-item:before {
-                content: "";
-                position: absolute;
-                left: -22px;
-                top: 5px;
-                width: 10px;
-                height: 10px;
-                border-radius: 50%;
-                background: #fff;
-                box-shadow: 0 0 0 4px rgba(255,255,255,.12)
-            }
-
-            .timeline-item:last-child {
-                margin-bottom: 0
-            }
-
-        .item-title {
-            font-size: 15px;
-            font-weight: 700;
-            margin: 0
-        }
-
-        .item-subtitle {
-            margin: 4px 0 8px;
-            font-size: 12px;
-            color: #ddd9d1;
-            font-weight: 500
-        }
-
-        .item-list {
+        .bullets {
             margin: 0;
-            padding-left: 16px;
-            font-size: 12.5px
+            padding-left: 20px;
+            color: #1f1f1f;
+            font-size: 14px;
+            line-height: 1.65;
         }
 
-            .item-list li {
-                margin: 0 0 8px
+            .bullets li {
+                margin: 0 0 10px;
             }
 
-        .edu {
-            margin-top: 24px
-        }
+            .bullets ul {
+                margin: 10px 0 0;
+                padding-left: 18px;
+                list-style-type: circle;
+            }
+
+                .bullets ul li {
+                    margin-bottom: 8px;
+                }
 
         .edu-grid {
             display: grid;
             gap: 18px;
-            margin-top: 16px
         }
 
         .edu-item {
-            position: relative;
-            padding-left: 22px
+            padding-bottom: 18px;
+            border-bottom: 1px solid #e7e2d8;
         }
 
-            .edu-item:before {
-                content: "";
-                position: absolute;
-                left: -1px;
-                top: 5px;
-                width: 9px;
-                height: 9px;
-                background: #fff;
-                border-radius: 50%
-            }
-
-            .edu-item:after {
-                content: "";
-                position: absolute;
-                left: 3px;
-                top: 14px;
-                bottom: -8px;
-                width: 2px;
-                background: rgba(255,255,255,.22)
-            }
-
-            .edu-item:last-child:after {
-                display: none
+            .edu-item:last-child {
+                border-bottom: 0;
+                padding-bottom: 0;
             }
 
         .edu-title {
-            margin: 0;
-            font-size: 15px;
-            font-weight: 700
-        }
-
-        .edu-subtitle {
-            margin: 4px 0 8px;
-            font-size: 12px;
-            color: #ddd9d1
+            margin: 0 0 10px;
+            font-size: 18px;
+            line-height: 1.25;
+            font-weight: 800;
         }
 
         .edu-desc {
             margin: 0;
-            font-size: 12.5px
+            font-size: 14px;
+            line-height: 1.65;
+            color: #1f1f1f;
         }
 
         .language {
-            margin-top: 18px;
-            font-size: 13px
+            font-size: 15px;
+            line-height: 1.6;
+            color: #1f1f1f;
         }
 
         .muted {
-            color: #ddd9d1
+            color: var(--muted);
         }
 
-        @media (max-width:900px) {
-            .page {
+        @media (max-width: 980px) {
+            .resume {
                 width: calc(100vw - 18px);
-                grid-template-columns: 1fr;
-                margin: 10px auto;
-                min-height: auto
+                margin: 9px auto 18px;
             }
 
-            .right, .left {
-                padding: 24px 20px
+            .header {
+                grid-template-columns: 1fr;
+                gap: 22px;
+                padding: 24px 20px 22px;
+            }
+
+            .section {
+                padding-left: 20px;
+                padding-right: 20px;
+            }
+
+            .photo-wrap {
+                justify-content: flex-start;
+            }
+
+            .photo {
+                max-width: 220px;
+            }
+
+            .section-header h2 {
+                font-size: 20px;
             }
 
             .name {
-                font-size: 34px
+                font-size: 38px;
             }
         }
 
         @media print {
             body {
-                background: #fff
+                background: #fff;
             }
 
-            .page {
+            .resume {
                 width: 100%;
                 margin: 0;
                 box-shadow: none;
-                min-height: auto
             }
         }
     </style>
 </head>
 <body>
-    <main class="page">
-        <aside class="left">
-            <img src="4.jpg" alt="Фото" class="photo">
-            <h2 class="section-title">Обо мне</h2>
-            <div class="about">Добрый день! На связи коммуникабельный и целеустремленный менеджер внутреннего продукта, по совместительству проектный менеджер с 3-летним опытом успешного развития продукта и управления командой в IT-сфере. Умею соединять потребности бизнеса и пользователей, качественно анализировать их при проектировании задач, правильно расставлять приоритеты и эффективно распоряжаться ресурсами команды.</div>
-            <h2 class="section-title">Контакты</h2>
-            <ul class="contacts">
-                <li>Телефон: <span class="muted">8 (931) 590-46-80</span></li>
-                <li>Email: <span class="muted">m.a.x.97@mail.ru</span></li>
-                <li>GitHub: <span class="muted">github.com/MaksimChernyshev</span></li>
-                <li>Discord: <span class="muted">badfrukt#8364</span></li>
-            </ul>
-        </aside>
-        <section class="right">
-            <h1 class="name">ЧЕРНЫШЕВ<br>МАКСИМ</h1>
-            <div class="role">Менеджер внутреннего продукта / Project &amp; Product Manager</div>
-            <div class="separator"></div>
+    <main class="resume">
+        <section class="header">
+            <div>
+                <h1 class="name">ЧЕРНЫШЕВ<br>МАКСИМ</h1>
+                <div class="role">Product / Project менеджер</div>
 
-            <h2 class="section-title">Опыт работы</h2>
-            <div class="timeline">
-                <div class="timeline-item">
-                    <p class="item-title">IDENT</p>
-                    <p class="item-subtitle">Project/Product менеджер внутреннего продукта | январь 2024 — настоящее время</p>
-                    <ul class="item-list">
+                <div class="contacts">
+                    <div class="contact"><span class="icon">☎</span><span>+7 (931) 590-46-80</span></div>
+                    <div class="contact"><span class="icon">✉</span><span>m.a.x.97@mail.ru</span></div>
+                    <div class="contact"><span class="icon">⌂</span><span>github.com/MaksimChernyshev</span></div>
+                </div>
+            </div>
+
+            <div class="photo-wrap">
+                <img class="photo" src="1.jpg" alt="Фото">
+            </div>
+
+            <div>
+                <h2 class="about-title">Обо мне</h2>
+                <div class="about">
+                    <p>Добрый день! На связи коммуникабельный и целеустремленный менеджер внутреннего продукта, по совместительству проектный менеджер с 3-летним опытом успешного развития продукта и управления командой в IT-сфере. Умею соединять потребности бизнеса и пользователей, качественно анализировать их при проектировании задач, правильно расставлять приоритеты и эффективно распоряжаться ресурсами команды.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="section-header">
+                <h2>Опыт работы</h2>
+                <div class="rule"></div>
+            </div>
+
+            <div class="experience">
+                <article class="job">
+                    <h3 class="job-title">Project/Product менеджер внутреннего продукта</h3>
+                    <div class="meta-row">
+                        <span class="chip company">IDENT</span>
+                        <span class="chip date">01.2024 — настоящее время</span>
+                    </div>
+                    <ul class="bullets">
                         <li>Лидирую кросс-функциональную команду из 5 человек: 3 C#-разработчика, QA-инженер и бизнес-аналитик.</li>
                         <li>Управляю полным циклом задач и пожеланий от разных стейкхолдеров — от линейных сотрудников до директоров: сбор и формализация требований, проектирование решений, декомпозиция, агрегация задач в релизы и сопровождение до внедрения.</li>
-                        <li>Оптимизирую и внедряю новые бизнес-процессы внутреннего продукта, повышаю эффективность работы пользователей и сокращаю операционные издержки. Это позволило заметно улучшить бизнес-метрики:</li>
-                        <li>Рост процента обработанных клиник на стадии открытия с 69% до 94%, что, как следствие, привело к росту конверсии лидов в клиентов с 19% до 23%.</li>
-                        <li>Вдвое увеличена скорость обновления клиник.</li>
-                        <li>Значительно увеличена скорость исправления критических инцидентов: неудачных обновлений клиник, из-за которых программа перестаёт работать, обработки негативных обращений клиентов, внутренних критических ошибок и других подобных случаев.</li>
+                        <li>
+                            Оптимизирую и внедряю новые бизнес-процессы внутреннего продукта, повышаю эффективность работы пользователей и сокращаю операционные издержки. Это позволило заметно улучшить бизнес-метрики:
+                            <ul>
+                                <li>Рост процента обработанных клиник на стадии открытия с 69% до 94%, что, как следствие, привело к росту конверсии лидов в клиентов с 19% до 23%.</li>
+                                <li>Вдвое увеличена скорость обновления клиник.</li>
+                                <li>Значительно увеличена скорость исправления критических инцидентов: неудачных обновлений клиник, из-за которых программа перестаёт работать, обработки негативных обращений клиентов, внутренних критических ошибок и других подобных случаев.</li>
+                            </ul>
+                        </li>
                         <li>Веду и развиваю product roadmap: планирование инициатив, балансировка загрузки команды, увязка задач с приоритетами бизнеса.</li>
                         <li>Участвую в продуктовой проработке решений: макетирование и прототипирование интерфейсов (Figma и др.), формирование пользовательских сценариев.</li>
                         <li>Координирую взаимодействие между бизнесом и командой разработки, управляю ожиданиями стейкхолдеров и сроками реализации.</li>
                         <li>Настраиваю и веду проектные инструменты: доски задач, трекинг, планирование спринтов и итераций, повышаю прозрачность процессов и контроль исполнения.</li>
                     </ul>
-                </div>
-                <div class="timeline-item">
-                    <p class="item-title">IDENT</p>
-                    <p class="item-subtitle">Инженер по обеспечению качества (QA) | январь 2023 — январь 2024</p>
-                    <ul class="item-list">
+                </article>
+
+                <article class="job">
+                    <h3 class="job-title">Quality assurance инженер</h3>
+                    <div class="meta-row">
+                        <span class="chip company">IDENT</span>
+                        <span class="chip date">01.2023 — 01.2024</span>
+                    </div>
+                    <ul class="bullets">
                         <li>Разрабатывал тестовую документацию: тест-планы, чек-листы и тест-кейсы. Структурировал процесс тестирования с целью оптимального покрытия продукта в условиях ограниченных ресурсов.</li>
                         <li>Проводил ручное тестирование продукта во всех плоскостях: UI/UX, анализ работы кода и базы данных. Взаимодействовал с разработчиками для оперативного исправления найденных дефектов.</li>
                         <li>Обеспечивал качество продукта: анализировал тестовую документацию и результаты тестирования для оптимизации процессов проверки.</li>
                     </ul>
-                </div>
+                </article>
+
+                <article class="job">
+                    <h3 class="job-title">Менеджер по работе с клиентами / Сервисный инженер</h3>
+                    <div class="meta-row">
+                        <span class="chip company">Ingersoll Rand</span>
+                        <span class="chip date">2020 — 2021</span>
+                    </div>
+                    <ul class="bullets">
+                        <li>Работа с клиентами, техническая поддержка, сопровождение сервисных процессов.</li>
+                    </ul>
+                </article>
+
+                <article class="job">
+                    <h3 class="job-title">Менеджер по работе с клиентами</h3>
+                    <div class="meta-row">
+                        <span class="chip date">2019 — 2020</span>
+                    </div>
+                    <ul class="bullets">
+                        <li>Консультирование клиентов, ведение проектов и документации.</li>
+                    </ul>
+                </article>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="section-header">
+                <h2>Образование</h2>
+                <div class="rule"></div>
             </div>
 
-            <h2 class="section-title edu">Образование</h2>
             <div class="edu-grid">
-                <div class="edu-item">
-                    <p class="edu-title">Яндекс.Практикум</p>
-                    <p class="edu-subtitle">Инженер по тестированию | 2022</p>
+                <article class="edu-item">
+                    <h3 class="edu-title">Инженер по тестированию</h3>
+                    <div class="meta-row">
+                        <span class="chip company">Яндекс.Практикум</span>
+                        <span class="chip date">30.05.2022 — 24.10.2022</span>
+                    </div>
                     <p class="edu-desc">Тестирование веб- и мобильных приложений, тестовая документация, API, Postman, SQL, DevTools.</p>
-                </div>
-                <div class="edu-item">
-                    <p class="edu-title">Санкт-Петербургский Политехнический университет</p>
-                    <p class="edu-subtitle">2015 — 2019</p>
-                    <p class="edu-desc">Инженер-конструктор по направлению «Компрессорная, вакуумная и холодильная техника».</p>
-                </div>
-            </div>
+                </article>
 
-            <h2 class="section-title edu">English</h2>
+                <article class="edu-item">
+                    <h3 class="edu-title">Инженер-конструктор по направлению «Компрессорная, вакуумная и холодильная техника»</h3>
+                    <div class="meta-row">
+                        <span class="chip company">Санкт-Петербургский политехнический университет Петра Великого</span>
+                        <span class="chip date">01.09.2015 — 15.06.2019</span>
+                    </div>
+                </article>
+
+                <article class="edu-item">
+                    <h3 class="edu-title">Школьная программа</h3>
+                    <div class="meta-row">
+                        <span class="chip company">Гимназия №5, Рудный, Казахстан</span>
+                        <span class="chip date">01.09.2004 — 10.06.2015</span>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="section-header">
+                <h2>English</h2>
+                <div class="rule"></div>
+            </div>
             <div class="language">A2 — Pre-Intermediate</div>
         </section>
     </main>
